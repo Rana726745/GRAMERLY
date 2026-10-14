@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.asragro.banglavoice'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.asragro.banglavoice'
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+}
