@@ -40,11 +40,14 @@ public class MainActivity extends Activity {
         getWindow().setNavigationBarColor(Color.rgb(7,17,31));
 
         webView = new WebView(this);
+        webView.setBackgroundColor(Color.rgb(7,17,31));
+        webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
         setContentView(webView);
 
         WebSettings s = webView.getSettings();
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
+        s.setDatabaseEnabled(true);
         s.setAllowFileAccess(false);
         s.setAllowContentAccess(false);
         s.setBuiltInZoomControls(false);
@@ -62,7 +65,7 @@ public class MainActivity extends Activity {
         } catch (Exception e) {
             html = "<html><body style='background:#07111f;color:white;font-family:sans-serif;padding:24px'><h2>AsR Egg Business</h2><p>Unable to load app interface.</p></body></html>";
         }
-        webView.loadDataWithBaseURL("https://asr.local/", html, "text/html", "UTF-8", null);
+        webView.loadDataWithBaseURL("https://app.local/", html, "text/html", "UTF-8", null);
     }
 
     private String readAsset(String name) throws Exception {
